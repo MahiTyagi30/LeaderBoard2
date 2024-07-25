@@ -1,38 +1,191 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial, sans-serif';
+  /* background: url('/background.jpg') no-repeat center center fixed; */
+  background-size: cover;
+  color: #fff;
+}
+
 .App {
   text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the app container */
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-bottom: 20px;
+  color: #ffcc00;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px #000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-score-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add-score-button:hover {
+  background-color: #218838;
+}
+
+.popup {
+  margin-bottom: 20px;
+  background: aliceblue;
+  padding: 20px;
+  border-radius: 10px;
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: aliceblue; */
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popup form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.popup label {
+  margin-bottom: 10px;
+  color: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.popup input {
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.popup button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #218838;
+}
+
+.close-button {
+  background-color: #dc3545;
+  margin-top: 5px;
+}
+
+.close-button:hover {
+  background-color: #c82333;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+    margin: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 2rem;
   }
+
+  .add-score-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .popup {
+    padding: 15px;
+  }
+
+  .popup form {
+    width: 100%;
+  }
+
+  .popup input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .add-score-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .popup {
+    padding: 10px;
+  }
+
+  .popup form {
+    width: 100%;
+  }
+
+  .popup input {
+    width: 100%;
+  }
+}
+.popup h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.popup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup label {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.popup input {
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.popup button {
+  padding: 5px 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #218838;
+}
+
+.close-button {
+  background-color: #dc3545;
+  margin-top: 5px;
+}
+
+.close-button:hover {
+  background-color: #c82333;
 }

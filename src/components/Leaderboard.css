@@ -1,0 +1,69 @@
+/* src/components/Leaderboard.css */
+
+.leaderboard {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Arial, sans-serif';
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+    overflow: hidden;
+    color: #333;
+  }
+  
+  .leaderboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffcc00; /* Title color */
+    background-color: #333; /* Title background color */
+    padding: 10px 0;
+    font-size: 2rem;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .leaderboard-header,
+  .leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .leaderboard-header {
+    background-color: #444;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .leaderboard-item:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .leaderboard-rank,
+  .leaderboard-name,
+  .leaderboard-score {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .leaderboard-rank {
+    flex: 0.2;
+  }
+  
+  .leaderboard-name {
+    flex: 1.5;
+  }
+  
+  .leaderboard-score {
+    flex: 1.3;
+  }
+  
+  /* Additional styles for hover and active states */
+  .leaderboard-item:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .leaderboard-item:active {
+    background-color: #ccc;
+  }
+  
