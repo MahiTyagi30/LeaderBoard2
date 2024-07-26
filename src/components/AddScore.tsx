@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 import { addScore } from '../features/leaderboardSlice';
 import './AddScore.css';
 
@@ -14,9 +15,35 @@ const AddScore: React.FC<AddScoreProps> = ({ closePopup }) => {
   const [score, setScore] = useState('');
   const dispatch = useDispatch();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const suprSendUrl = process.env.REACT_APP_SUPRSEND_URL || 'https://api.suprsend.com';
+  const suprSendApiKey = process.env.REACT_APP_SUPRSEND_API_KEY;
+
+  const sendNotification = async (message: string) => {
+    if (!suprSendUrl || !suprSendApiKey) {
+      console.error('SuprSend URL or API Key is not defined');
+      return;
+    }
+
+    const payload = {
+      message,
+    };
+
+    try {
+      await axios.post(suprSendUrl, payload, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${suprSendApiKey}`,
+        },
+      });
+    } catch (error) {
+      console.error('Error sending notification', error);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(addScore({ username, score }));
+    await sendNotification(`New score added by ${username}: ${score}`);
     setUsername('');
     setScore('');
     closePopup();
